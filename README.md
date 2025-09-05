@@ -2,14 +2,14 @@
 <!-- [![Build Status](https://travis-ci.org/jjasghar/ibm-cloud-cli.svg?branch=master)](https://travis-ci.org/jjasghar/ibm-cloud-cli) -->
 [![Build Status](https://app.travis-ci.com/IBM/cora.svg?token=3QHapyMs1C2MgHcEzaRi&branch=main)](https://app.travis-ci.com/IBM/cora)
 
-# Cora
-<!-- This is the repo with the code for the paper Improving score reliability of multiple choice benchmarks with consistency evaluation and altered answer choices. -->
+# CONSIST
+<!--Repository for the code of the paper **The Non-Determinism of Small LLMs: Evidence of Low Answer
+Consistency in Repetition Trials of Standard Multiple-Choice Benchmarks**.-->
 
 <!-- A more detailed Usage or detailed explaination of the repository here -->
 ## Getting started
 
-To run this code, we advise that you create a Python enviroment first, install the required libraries, and then follow the [steps to generate results](#steps-to-generate-results)
-to execute the scripts and obtain results.
+To run this code, we advise that you create a Python enviroment first to install the required libraries, following instructions in [create a python environment](#create-a-python-environment). After that, you can follow the [steps to generate results](#steps-to-generate-results) to execute scripts in the specified order to prepare the data, generate answers and evaluations.
 
 ### Create a Python environment
 
@@ -62,7 +62,7 @@ python -m src.output_analysis.compute_CORE -i data/MMLU-Redux/MMLU-Redux_wOutput
 
 ### Documentation
 
-Documentation can be found primarily in this file and soon at Cora's github pages.
+Documentation can be found primarily in this file and soon at Consist's github pages.
 
 ## Contribute
 
