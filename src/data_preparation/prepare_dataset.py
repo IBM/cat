@@ -14,8 +14,7 @@ def main():
 
     if bench_type == 'MedQA':
         input_file = args.i
-
-        input_data = pd.read_excel( input_file )
+        input_data = pd.read_csv_xlsx(input_file)
         # filter out training data
         input_data = input_data[ input_data['filesource'] == 'test.jsonl' ].reset_index()
         # Delete multiple columns
@@ -103,8 +102,8 @@ def main():
             input_data['Category'] = category
             input_dfs.append(input_data)
         input_data = pd.concat(input_dfs)   
-    
-    input_data.to_excel(output_file, index=False)
+
+    ourlib.save_to_csv_xlsx(input_data, output_file)
 
 if __name__ == "__main__":
   main()
