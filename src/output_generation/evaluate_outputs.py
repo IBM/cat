@@ -21,7 +21,7 @@ def main():
     else:
         to_filter = None
 
-    input_data = pd.read_excel( input_file )
+    input_data = pd.read_excel(input_file)
     input_data['consistency_stats'] = None
 
     for idx, row in input_data.iterrows():
