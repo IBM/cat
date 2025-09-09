@@ -61,10 +61,8 @@ def main():
                 if answer in options.keys():
                     row['answer'] = options[answer]
                     answer = row['answer'] 
-                output_data[config_name] = []
-                
+                output_data[config_name] = []  
                 choices = ourlib.get_alternative_choices(row, configs[config_name])
-
                 for choice in choices:
                     correct_choice = ourlib.find_key_by_value(choice, answer)
                     output_data[config_name].append( { 'correct_choice': correct_choice, 'choices': choice} )
