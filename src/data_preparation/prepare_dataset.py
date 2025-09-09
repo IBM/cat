@@ -1,29 +1,15 @@
 import argparse
 import pandas as pd
 from datasets import load_dataset
-
 from .. import ourlib
 
 def main():
-    """Reads a filename from a command-line argument using argparse.
-
-    Example usage:
-    python your_script.py --input my_file.xlsx
-    """
-
     parser = argparse.ArgumentParser(description="Generate prompts given an input file in XLSX or CSV format.")
     parser.add_argument("-i", required=False, help="Name of the input file")
     parser.add_argument("-o", required=True, help="Name of the output file")
     parser.add_argument("-t", required=False, help="Type of the benchmark", default='MedQA')
     args = parser.parse_args()
-
-
-    # Handle input data
-    # TO BE MOVED TO PREPARE_DATASET
-
-
     output_file = args.o
-
     bench_type = args.t
 
     if bench_type == 'MedQA':
@@ -105,9 +91,7 @@ def main():
                         'sociology',
                         'us_foreign_policy',
                         'virology',
-                        'world_religions'
-                     ]
-        
+                        'world_religions']
         input_dfs = []
         
         for category in categories:
@@ -117,11 +101,8 @@ def main():
             input_data = pm_dev_df.reset_index()
             input_data.drop(['index'], axis=1, inplace=True)
             input_data['Category'] = category
-
             input_dfs.append(input_data)
-
         input_data = pd.concat(input_dfs)   
-
     
     input_data.to_excel(output_file, index=False)
 
