@@ -19,7 +19,7 @@ def main():
     else:
         to_filter = None
 
-    input_data = ourlib.read_csv_xlsx( input_file )
+    input_data = ourlib.read_csv_xlsx(input_file)
 
     total_evaluations = 100 # workaround since the number of total evaluations varies
     totals_correct = [-1] * total_evaluations
