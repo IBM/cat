@@ -24,7 +24,7 @@ def main():
         to_filter = None
     
     # read input file
-    input_data = ourlib.read_csv_xlsx( input_file )
+    input_data = ourlib.read_csv_xlsx(input_file)
 
     # this column will contain all generated here in JSON format
     if 'expanded_evaluation' not in input_data.columns:
