@@ -1,4 +1,4 @@
 # MAINTAINERS
 
-<maintainer_name> - <maintainer_email>
+Cássia Sampaio - csamp@ibm.com
 
