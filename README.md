@@ -4,7 +4,7 @@
 
 # CONSIST
 This is the code for the **CONSIST** framework, with the entire pipeline to evaluate the consistency of LLMs on multiple-choice benchmarks. 
-As described in **The Non-Determinism of Small LLMs: Evidence of Low Answer Consistency in Repetition Trials of Standard Multiple-Choice Benchmarks** paper.
+<!--As described in **The Non-Determinism of Small LLMs: Evidence of Low Answer Consistency in Repetition Trials of Standard Multiple-Choice Benchmarks** paper.-->
 
 <!-- A more detailed Usage or detailed explaination of the repository here -->
 ## Getting started
