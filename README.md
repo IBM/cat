@@ -1,6 +1,7 @@
 <!-- Build Status, is a great thing to have at the top of your repository, it shows that you take your CI/CD as first class citizens -->
 <!-- [![Build Status](https://travis-ci.org/jjasghar/ibm-cloud-cli.svg?branch=master)](https://travis-ci.org/jjasghar/ibm-cloud-cli) -->
 [![Build Status](https://app.travis-ci.com/IBM/cora.svg?token=3QHapyMs1C2MgHcEzaRi&branch=main)](https://app.travis-ci.com/IBM/cora)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # CONSIST
 This is the code for the **CONSIST** framework, with the entire pipeline to evaluate the consistency of LLMs on multiple-choice benchmarks. 
@@ -128,12 +129,11 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 # SPDX-License-Identifier: Apache-2.0
 #
 ``` -->
-<!--
+
 ## Contributors
 [<img src="https://github.com/paulocavalin.png" width="60px;"/>](https://github.com/paulocavalin/)
 [<img src="https://github.com/cassiasamp.png" width="60px;"/>](https://github.com/cassiasamp/)
 [<img src="https://github.com/marcelo-grave.png" width="60px;"/>](https://github.com/marcelo-grave/)
- -->
 
 <!--
 ## Citing the project
