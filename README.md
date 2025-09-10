@@ -67,7 +67,7 @@ python -m src.output_generation.generate_alternative_evaluations -i data/MMLU-Re
 ``` python
 python -m src.output_generation.generate_outputs -i data/MMLU-Redux/MMLU-Redux_wAlternativeEvaluations.xlsx -o data/MMLU-Redux/MMLU-Redux_wOutputs.xlsx
 ```
-Use the -m parameter to change the model use the corresponding model ID from HuggingFace
+Use the `-m` parameter to change the model use the corresponding model ID from HuggingFace.
 
 #### 4. Compute the metrics
 MCQA:
@@ -84,7 +84,7 @@ MCA:
 ``` python
 python -m src.output_analysis.compute_MCA -i data/MMLU-Redux/MMLU-Redux_wOutputs.xlsx
 ```
-Use the -c parameter to adjust the minimum consistency
+Use the `-c` parameter to adjust the minimum consistency.
 
 CoRA:
 ``` python
