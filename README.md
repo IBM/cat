@@ -39,7 +39,7 @@ Inside the `\src` folder, we have enumerated the script folders in the order the
 
 2. Output analysis
 
-There are no enumerations for `Data preparation` and `Output analysis`, because `Data preparation` only leaves the data in an specific format and `Output analysis` contains the files for generating the metrics after running `Output generation`.
+There are no enumerations for *Data preparation* and *Output analysis*, because *Data preparation* only leaves the data in an specific format and *Output analysis* contains the files for generating the metrics after running *Output generation*.
 
 Initialy, prepare the data, then generate multiple versions of the data, which are the alternative evaluations. With those evaluations, generate the model outputs and, finally, evaluate those outputs to obtain results.
 
