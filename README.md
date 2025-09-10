@@ -3,13 +3,13 @@
 [![Build Status](https://app.travis-ci.com/IBM/cora.svg?token=3QHapyMs1C2MgHcEzaRi&branch=main)](https://app.travis-ci.com/IBM/cora)
 
 # CONSIST
-<!--Repository for the code of the paper **The Non-Determinism of Small LLMs: Evidence of Low Answer
-Consistency in Repetition Trials of Standard Multiple-Choice Benchmarks**.-->
+This is the code for the **CONSIST** framework, with the entire pipeline to evaluate the consistency of LLMs on multiple-choice benchmarks. 
+As described in **The Non-Determinism of Small LLMs: Evidence of Low Answer Consistency in Repetition Trials of Standard Multiple-Choice Benchmarks** paper.
 
 <!-- A more detailed Usage or detailed explaination of the repository here -->
 ## Getting started
 
-To run this code, we advise that you create a Python enviroment first to install the required libraries, following instructions in [create a python environment](#create-a-python-environment). After that, you can follow the [steps to generate results](#steps-to-generate-results) to execute scripts in the specified order to prepare the data, generate answers and evaluations.
+To run this code, we advise that you create a Python enviroment first to install the required libraries, following instructions in [create a python environment](#create-a-python-environment). After that, you can read the [steps to generate results](#steps-to-generate-results) to understand more about each script, and finally [run the code](#run-the-code) to execute scripts in the specified order.
 
 ### Create a Python environment
 
@@ -44,25 +44,61 @@ There are no enumerations for `Data preparation` and `Output analysis`, because 
 Initialy, prepare the data, then generate multiple versions of the data, which are the alternative evaluations. With those evaluations, generate the model outputs and, finally, evaluate those outputs to obtain results.
 
 ## How to use
+We present an example with the **MMLU-Redux** dataset and the **TinyLlama** model (the default option). For other benchmarks and models, the scripts and command line instructions should be adapted accordingly. 
 
-As an example, we have provided the MedQA data, the same data we have used in the paper, originally from [MedQA's paper github](https://github.com/jind11/MedQA?tab=readme-ov-file)
+The following instructions work if executed at the `root` of this github repository.
 
-You can modify the `format_data` script to add different data. 
+>[!NOTE] 
+> Both `.xlsx` and `.csv` file formats are supported, with `.csv` being recommended for longer prompts and outputs.
 
-Those are the steps to generate the results: 
+### Run the code
 
+#### 1. Prepare the dataset
 ``` python
-python -m src.data_preparation.prepare_dataset -i data/MedQA/MedQA.xlsx -o data/MedQA/MedQA_prepared.xlsx
-python -m src.output_generation.generate_alternative_evaluations -i data/MedQA/MedQA_prepared.xlsx -o data/MedQA/MedQA_wAlternativeEvaluations.xlsx
-python -m src.output_generation.generate_outputs -i data/MedQA/MedQA_wAlternativeEvaluations.xlsx -o data/MedQA/MedQA_wOutputs.xlsx
+python -m src.data_preparation.prepare_dataset -t MMLU-Redux -o data/MMLU-Redux/MMLU-Redux_prepared.xlsx
+```
+
+#### 2. Generate alternative evaluation data
+``` python
+python -m src.output_generation.generate_alternative_evaluations -i data/MMLU-Redux/MMLU-Redux_prepared.xlsx -o data/MMLU-Redux/MMLU-Redux_wAlternativeEvaluations.xlsx
+```
+
+#### 3. Run LLM inference to generate outputs
+``` python
+python -m src.output_generation.generate_outputs -i data/MMLU-Redux/MMLU-Redux_wAlternativeEvaluations.xlsx -o data/MMLU-Redux/MMLU-Redux_wOutputs.xlsx
+```
+Use the -m parameter to change the model use the corresponding model ID from HuggingFace
+
+#### 4. Compute the metrics
+MCQA:
+``` python
+python -m src.output_analysis.compute_MCQA -i data/MMLU-Redux/MMLU-Redux_wOutputs.xlsx
+```
+
+MCQA+:
+``` python
+python -m src.output_analysis.compute_MCQA+ -i data/MMLU-Redux/MMLU-Redux_wOutputs.xlsx
+```
+
+MCA:
+``` python
+python -m src.output_analysis.compute_MCA -i data/MMLU-Redux/MMLU-Redux_wOutputs.xlsx
+```
+Use the -c parameter to adjust the minimum consistency
+
+CoRA:
+``` python
 python -m src.output_analysis.compute_CoRA -i data/MMLU-Redux/MMLU-Redux_wOutputs.xlsx
-python -m src.output_analysis.compute_MCA -c 0.9 -i data/MMLU-Redux/MMLU-Redux_wOutputs.xlsx
+```
+
+CORE:
+``` python
 python -m src.output_analysis.compute_CORE -i data/MMLU-Redux/MMLU-Redux_wOutputs.xlsx
 ```
 
 ### Documentation
 
-Documentation can be found primarily in this file and soon at Consist's github pages.
+Documentation can be found primarily in this file and soon at Consist's github wiki.
 
 ## Contribute
 
