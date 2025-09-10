@@ -98,7 +98,7 @@ python -m src.output_analysis.compute_CORE -i data/MMLU-Redux/MMLU-Redux_wOutput
 
 ### Documentation
 
-Documentation can be found primarily in this file and soon at Consist's github wiki.
+Documentation can be found primarily in this file and soon at CONSIST's github wiki.
 
 ## Contribute
 
