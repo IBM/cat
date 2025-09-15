@@ -135,23 +135,19 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 [<img src="https://github.com/cassiasamp.png" width="60px;"/>](https://github.com/cassiasamp/)
 [<img src="https://github.com/marcelo-grave.png" width="60px;"/>](https://github.com/marcelo-grave/)
 
-<!--
+
 ## Citing the project
 
 You can cite the project as:
 
 ```bibtex
-@inproceedings{santana2025responsible,
-  author    = {Vagner Figueredo de Santana and Sara Berger and Heloisa Candello and Tiago Machado and Cassia Sampaio Sanctos and Tianyu Su and Lemara Williams},
-  title     = {Responsible Prompting Recommendation: Fostering Responsible {AI} Practices in Prompting-Time},
-  booktitle = {CHI Conference on Human Factors in Computing Systems ({CHI} '25)},
-  year      = {2025},
-  location  = {Yokohama, Japan},
-  publisher = {ACM},
-  address   = {New York, NY, USA},
-  pages     = {30},
-  doi       = {10.1145/3706598.3713365},
-  url       = {https://doi.org/10.1145/3706598.3713365}
+@misc{pinhanez2025nondeterminismsmallllmsevidence,
+ title = {The Non-Determinism of Small LLMs: Evidence of Low Answer Consistency in Repetition Trials of Standard Multiple-Choice Benchmarks}, 
+ author = {Claudio Pinhanez and Paulo Cavalin and Cassia Sanctos and Marcelo Grave and Yago Primerano},
+ year = {2025},
+ eprint = {2509.09705},
+ archivePrefix = {arXiv},
+ primaryClass = {cs.CL},
+ url = {https://arxiv.org/abs/2509.09705}, 
 }
 ```
--->
