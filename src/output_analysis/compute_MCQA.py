@@ -13,9 +13,9 @@ def main():
     input_file = args.i
     print(f"The provided input file is: {input_file}")
 
-    input_data = ourlib.read_csv_xlsx( input_file )
+    input_data = ourlib.read_csv_xlsx(input_file)
 
-    totals = { 'correct':0, 'count': 0}
+    totals = {'correct':0, 'count': 0}
 
     for idx, row in tqdm(input_data.iterrows(), total=len(input_data)):
         try:
