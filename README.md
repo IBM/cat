@@ -130,13 +130,13 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 #
 ``` -->
 
-## Contributors
+<!--## Contributors
 [<img src="https://github.com/paulocavalin.png" width="60px;"/>](https://github.com/paulocavalin/)
 [<img src="https://github.com/cassiasamp.png" width="60px;"/>](https://github.com/cassiasamp/)
-[<img src="https://github.com/marcelo-grave.png" width="60px;"/>](https://github.com/marcelo-grave/)
+[<img src="https://github.com/marcelo-grave.png" width="60px;"/>](https://github.com/marcelo-grave/)-->
 
 
-## Citing the project
+<!--## Citing the project
 
 You can cite the project as:
 
@@ -150,4 +150,4 @@ You can cite the project as:
  primaryClass = {cs.CL},
  url = {https://arxiv.org/abs/2509.09705}, 
 }
-```
+```-->
