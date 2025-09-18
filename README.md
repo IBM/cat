@@ -134,7 +134,7 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 [<img src="https://github.com/paulocavalin.png" width="60px;"/>](https://github.com/paulocavalin/)
 [<img src="https://github.com/cassiasamp.png" width="60px;"/>](https://github.com/cassiasamp/)
 [<img src="https://github.com/marcelo-grave.png" width="60px;"/>](https://github.com/marcelo-grave/)-->
-
+-->
 
 <!--## Citing the project
 
