@@ -5,6 +5,19 @@ import numpy as np
 from tqdm import tqdm
 from .. import ourlib
 
+
+def get_most_voted_response(votes):
+    max_votes = -1
+    max_voted = None
+    
+    for vote, value in votes.items():
+        if value > max_votes:
+            max_votes = value
+            max_voted = vote
+
+    return max_voted    
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate prompts given an input file in XLSX or CSV format.")
     parser.add_argument("-i", required=True, help="Name of the input file")
@@ -19,7 +32,8 @@ def main():
     else:
         to_filter = None
 
-    input_data = pd.read_excel( input_file )
+    input_data = pd.read_excel(input_file)
+
 
     total_correct = 0
     count = 0
@@ -27,9 +41,13 @@ def main():
     for idx, row in tqdm(input_data.iterrows(), total=len(input_data)):   
         try:
             evaluation_data = json.loads(row['expanded_evaluation'])
+            correct_choice = evaluation_data['standard_MC'][0]['correct_choice']
+            choices = evaluation_data['standard_MC'][0]['choices']
+            model_choice = evaluation_data['standard_MC'][0]['model_choice']
         except json.JSONDecodeError as e:
             print("Invalid JSON data:", e)
 
+        votes = {}
         corrects = 0
         incorrects = 0
         
@@ -37,6 +55,12 @@ def main():
             if to_filter is None or evaluation_type in to_filter:
                 curr_evaluation_data = evaluation_data[evaluation_type]
                 for evaluation_element in curr_evaluation_data:
+                    alt_model_choice = evaluation_element['model_choice']
+                    alt_model_answer = evaluation_element['choices'][alt_model_choice]
+                    choice_vote = ourlib.find_key_by_value(choices, alt_model_answer)
+                    if choice_vote not in votes:
+                        votes[choice_vote] = 0
+                    votes[choice_vote] += 1
                     if evaluation_element['model_choice'] == evaluation_element['correct_choice']:
                         corrects += 1
                     else:
@@ -45,8 +69,15 @@ def main():
             total_correct += 1                
         count += 1
 
+        max_voted = get_most_voted_response(votes)
+          
+        if max_voted == correct_choice:
+            correct_mv += 1             
+
     print(f"MV Accuracy:")
-    print(f"   {total_correct/count:.3F}")
+    MV = correct_mv/count
+    print(f"   {MV:.3F}")
+
 
 if __name__ == "__main__":
   main()
