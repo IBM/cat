@@ -5,18 +5,14 @@ import numpy as np
 from tqdm import tqdm
 from .. import ourlib
 
-
 def get_most_voted_response(votes):
     max_votes = -1
-    max_voted = None
-    
+    max_voted = None 
     for vote, value in votes.items():
         if value > max_votes:
             max_votes = value
             max_voted = vote
-
     return max_voted    
-
 
 def main():
     parser = argparse.ArgumentParser(description="Generate prompts given an input file in XLSX or CSV format.")
@@ -34,9 +30,11 @@ def main():
 
     input_data = pd.read_excel(input_file)
 
-
     total_correct = 0
     count = 0
+    votes = {}
+    corrects = 0
+    incorrects = 0
 
     for idx, row in tqdm(input_data.iterrows(), total=len(input_data)):   
         try:
@@ -46,10 +44,6 @@ def main():
             model_choice = evaluation_data['standard_MC'][0]['model_choice']
         except json.JSONDecodeError as e:
             print("Invalid JSON data:", e)
-
-        votes = {}
-        corrects = 0
-        incorrects = 0
         
         for evaluation_type in evaluation_data:
             if to_filter is None or evaluation_type in to_filter:
@@ -69,15 +63,13 @@ def main():
             total_correct += 1                
         count += 1
 
-        max_voted = get_most_voted_response(votes)
-          
+        max_voted = get_most_voted_response(votes)  
         if max_voted == correct_choice:
             correct_mv += 1             
 
     print(f"MV Accuracy:")
     MV = correct_mv/count
     print(f"   {MV:.3F}")
-
 
 if __name__ == "__main__":
   main()
