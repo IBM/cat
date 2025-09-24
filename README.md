@@ -3,8 +3,9 @@
 [![Build Status](https://app.travis-ci.com/IBM/cora.svg?token=3QHapyMs1C2MgHcEzaRi&branch=main)](https://app.travis-ci.com/IBM/cora)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-# CONSIST
-This is the code for the **CONSIST** framework, with the entire pipeline to evaluate the consistency of LLMs on multiple-choice benchmarks. 
+# CAT
+This is the code for the **CAT** framework, a novel evaluation framework designed to assess the interplay between accuracy and consistency of LLM responses, particularly in multiple-choice (MC) settings.
+This addresses a critical and underexplored non-functional property of LLMs.
 <!--As described in **The Non-Determinism of Small LLMs: Evidence of Low Answer Consistency in Repetition Trials of Standard Multiple-Choice Benchmarks** paper.-->
 
 <!-- A more detailed Usage or detailed explaination of the repository here -->
@@ -70,7 +71,14 @@ python -m src.output_generation.generate_outputs -i data/MMLU-Redux/MMLU-Redux_w
 ```
 Use the `-m` parameter to change the model use the corresponding model ID from HuggingFace.
 
-#### 4. Compute the metrics
+#### 4. Compute metrics and generate the graphs
+>[!NOTE] 
+> You can either run the notebook in the `notebooks` folder or run a script for each of the metrics.
+
+All metrics and graphs:
+
+Run the `compute_metrics_and_display_graphs.ipynb` notebook
+
 MCQA:
 ``` python
 python -m src.output_analysis.compute_MCQA -i data/MMLU-Redux/MMLU-Redux_wOutputs.xlsx
@@ -99,7 +107,7 @@ python -m src.output_analysis.compute_CORE -i data/MMLU-Redux/MMLU-Redux_wOutput
 
 ### Documentation
 
-Documentation can be found primarily in this file and soon at CONSIST's github wiki.
+Documentation can be found primarily in this file and soon at CAT's github wiki.
 
 ## Contribute
 
