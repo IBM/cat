@@ -32,18 +32,14 @@ pip install -r requirements.txt
 
 Inside the `\src` folder, we have enumerated the script folders in the order they are run:
 
-0. Data preparation
-1. Output generation
+1. Data preparation: prepares the data format
+2. Output generation
 
-    0. Generate alternative evaluations
-    1. Generate outputs
-    2. Evaluate outputs
+    1. Generate alternative evaluations: creates multiple versions of the data
+    2. Generate outputs: generates model responses
+    3. Evaluate outputs: evaluates the responses 
 
-2. Output analysis
-
-There are no enumerations for *Data preparation* and *Output analysis*, because *Data preparation* only leaves the data in an specific format and *Output analysis* contains the files for generating the metrics after running *Output generation*.
-
-Initialy, prepare the data, then generate multiple versions of the data, which are the alternative evaluations. With those evaluations, generate the model outputs and, finally, evaluate those outputs to obtain results.
+3. Output analysis: computes metrics and graphs
 
 ## How to use
 We present an example with the **MMLU-Redux** dataset and the **TinyLlama** model (the default option). For other benchmarks and models, the scripts and command line instructions should be adapted accordingly. 
@@ -75,9 +71,12 @@ Use the `-m` parameter to change the model use the corresponding model ID from H
 >[!NOTE] 
 > You can either run the notebook in the `notebooks` folder or run a script for each of the metrics.
 
-All metrics and graphs:
+### Run all metrics and graphs:
 
-Run the `compute_metrics_and_display_graphs.ipynb` notebook
+Execute the `compute_metrics_and_display_graphs.ipynb` notebook
+
+-----------------------------------------------------------------------------
+### Run only one metric:
 
 MCQA:
 ``` python
