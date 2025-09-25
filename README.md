@@ -71,9 +71,9 @@ Use the `-m` parameter to change the model use the corresponding model ID from H
 >[!NOTE] 
 > You can either run the notebook in the `notebooks` folder or run a script for each of the metrics.
 
-### Run all metrics and graphs:
+### Run all metrics:
 
-Execute the `compute_metrics_and_display_graphs.ipynb` notebook
+Execute the `compute_metrics.ipynb` notebook
 
 -----------------------------------------------------------------------------
 ### Run only one metric:
