@@ -3,7 +3,7 @@
 [![Build Status](https://app.travis-ci.com/IBM/cora.svg?token=3QHapyMs1C2MgHcEzaRi&branch=main)](https://app.travis-ci.com/IBM/cora)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-# CAT
+# Cat :cat2:
 This is the code for the **CAT** framework, a novel evaluation framework designed to assess the interplay between accuracy and consistency of LLM responses, particularly in multiple-choice (MC) settings.
 This addresses a critical and underexplored non-functional property of LLMs.
 <!--As described in **The Non-Determinism of Small LLMs: Evidence of Low Answer Consistency in Repetition Trials of Standard Multiple-Choice Benchmarks** paper.-->
