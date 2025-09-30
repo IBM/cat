@@ -1,6 +1,6 @@
 <!-- Build Status, is a great thing to have at the top of your repository, it shows that you take your CI/CD as first class citizens -->
 <!-- [![Build Status](https://travis-ci.org/jjasghar/ibm-cloud-cli.svg?branch=master)](https://travis-ci.org/jjasghar/ibm-cloud-cli) -->
-[![Build Status](https://app.travis-ci.com/IBM/cora.svg?token=3QHapyMs1C2MgHcEzaRi&branch=main)](https://app.travis-ci.com/IBM/cora)
+<!-- [![Build Status](https://app.travis-ci.com/IBM/cora.svg?token=3QHapyMs1C2MgHcEzaRi&branch=main)](https://app.travis-ci.com/IBM/cora) -->
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # Cat :cat2:
@@ -108,9 +108,11 @@ python -m src.output_analysis.compute_CORE -i data/MMLU-Redux/MMLU-Redux_wOutput
 
 Documentation can be found primarily in this file and soon at CAT's github wiki.
 
+<!--
 ## Contribute
-
+-->
 <!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
+<!--
 If you have any questions or issues you can create a new [issue here](https://github.com/IBM/cora/issues).
 
 Pull requests are very welcome! Make sure your patches are well tested.
@@ -122,6 +124,7 @@ example:
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+-->
 
 ## License
 <!-- All source files must include a Copyright and License header. The SPDX license header is
